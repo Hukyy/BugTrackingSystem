@@ -31,6 +31,11 @@ public class BugtrackingController {
 	public String addDev() {
 		return "actionsDeveloper";
 	}
+	
+	@RequestMapping(value = UrlConstants.ADD_DEV_SAVE_URL, method = RequestMethod.GET)
+	public String addDeveloper() {
+		return "add_developer";
+	}
 
 	@RequestMapping(value = UrlConstants.ADD_DEV_SAVE_URL, method = RequestMethod.POST)
 	public String addDeveloperSave(Model model, @ModelAttribute(value = "SpringWeb") Developer dev) {

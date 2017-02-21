@@ -1,6 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
-
 <head>
 
 <meta charset="utf-8">
@@ -11,61 +9,61 @@
 
 <title>Developers</title>
 
-<%@ include file= "head.jsp" %>
+<%@ include file="head.jsp"%>
 
-		<div id="page-wrapper">
-			<div class="row">
-				<div class="col-lg-12">
-					<h1 class="page-header">Developers</h1>
-				</div>
-				<!-- /.col-lg-12 -->
-			</div>
-			<!-- /.row -->
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-heading">All current developers</div>
-						<!-- /.panel-heading -->
-						<div class="panel-body">
-							<table width="100%"
-								class="table table-striped table-bordered table-hover"
-								id="dataTables-example">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Name</th>
-										<th>Role</th>
-										<th>Date</th>
-									</tr>
-								</thead>
-
-								<c:if test="${not empty Devs }">
-									<tbody>
-										<c:forEach var="s" items="${Devs}">
-											<tr>
-												<td>${s.id}</td>
-												<td>${s.name}</td>
-												<td>${s.role}</td>
-												<td>${s.date}</td>
-											</tr>
-										</c:forEach>
-
-									</tbody>
-								</c:if>
-							</table>
-						</div>
-						<!-- /.panel-body -->
-					</div>
-					<!-- /.panel -->
-				</div>
-				<!-- /.col-lg-12 -->
-			</div>
-			<!-- /.row -->
-
+<div id="page-wrapper">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Developers</h1>
 		</div>
-		<!-- /#page-wrapper -->
-
+		<!-- /.col-lg-12 -->
 	</div>
-	<!-- /#wrapper -->
+	<!-- /.row -->
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">All current developers</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<table width="100%"
+						class="table table-striped table-bordered table-hover"
+						id="dataTables-example">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Role</th>
+								<th>Date</th>
+							</tr>
+						</thead>
 
-	<%@ include file="footer.jsp" %>
+						<c:if test="${not empty Devs }">
+							<tbody>
+								<c:forEach var="s" items="${Devs}">
+									<tr>
+										<td>${s.id}</td>
+										<td>${s.name}</td>
+										<td>${s.role}</td>
+										<td>${s.date}</td>
+									</tr>
+								</c:forEach>
+
+							</tbody>
+						</c:if>
+					</table>
+				</div>
+				<!-- /.panel-body -->
+			</div>
+			<!-- /.panel -->
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<%@ include file="footer.jsp"%>
