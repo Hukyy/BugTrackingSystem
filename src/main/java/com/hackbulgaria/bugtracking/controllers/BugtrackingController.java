@@ -24,7 +24,7 @@ public class BugtrackingController {
 	@RequestMapping(value = UrlConstants.DEVS_REGISTER_URL, method = RequestMethod.GET)
 	public String getDevelopers(Model model) {
 		model.addAttribute("Devs", devService.getDevelopers());
-		return "DevsRegistry";
+		return "developers";
 	}
 
 	@RequestMapping(value = UrlConstants.ACTIONS_URL, method = RequestMethod.GET)
