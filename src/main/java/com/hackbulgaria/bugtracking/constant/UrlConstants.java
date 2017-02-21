@@ -3,6 +3,7 @@ package com.hackbulgaria.bugtracking.constant;
 public class UrlConstants {
 	private UrlConstants() {
 	}
+	public static final String HOME = "/home";
 	public static final String DEVS_REGISTER_URL = "/DevsRegistry";
 	public static final String ACTIONS_URL = "/actionsDeveloper";
 	public static final String ADD_DEV_SAVE_URL="/addDeveloperSave";

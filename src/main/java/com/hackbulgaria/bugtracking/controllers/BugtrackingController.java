@@ -16,6 +16,11 @@ public class BugtrackingController {
 	@Autowired
 	private DeveloperService devService;
 	
+	@RequestMapping(value = UrlConstants.HOME, method = RequestMethod.GET)
+	public String getHome(Model model) {
+		return "home";
+	}
+	
 	@RequestMapping(value = UrlConstants.DEVS_REGISTER_URL, method = RequestMethod.GET)
 	public String getDevelopers(Model model) {
 		model.addAttribute("Devs", devService.getDevelopers());
