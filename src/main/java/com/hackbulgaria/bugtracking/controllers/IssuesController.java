@@ -16,10 +16,10 @@ public class IssuesController {
 	@Autowired
 	private IssueService issueService;
 
-	@RequestMapping(value = "/IssueRegistry", method = RequestMethod.GET)
+	@RequestMapping(value = "/issues", method = RequestMethod.GET)
 	public String getIssues(Model model) {
 		model.addAttribute("Issues", issueService.getIssues());
-		return "IssuesRegistry";
+		return "add_developer"; //mocking for now
 	}
 	
 	@RequestMapping(value = UrlConstants.ISSUE_ACTION_URL, method = RequestMethod.GET)

@@ -17,12 +17,14 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/vendor/**" location="/vendor/" />
+	<resources mapping="/dist/**" location="/dist/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="prefix" value="/resources/pages/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
@@ -46,9 +48,8 @@
 		<beans:property name="url"
 			value="jdbc:mysql://localhost:3306/BUG_TRACKING?useSSL=false" />
 		<beans:property name="username" value="root" />
-		<beans:property name="password" value="" />
+		<beans:property name="password" value="123" />
 	</beans:bean>
-
 	<!-- JPA entity manager factory -->
 	<beans:bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">

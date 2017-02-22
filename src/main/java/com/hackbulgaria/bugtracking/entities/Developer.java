@@ -71,5 +71,16 @@ public class Developer {
 		// Custom equality check here.
 		return this.id == (that.id) && this.name.equals(that.name);
 	}
+	
+	@Column(name = "password")
+	private String password;
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+}
 
 }

@@ -16,15 +16,25 @@ public class BugtrackingController {
 	@Autowired
 	private DeveloperService devService;
 	
+	@RequestMapping(value = UrlConstants.HOME, method = RequestMethod.GET)
+	public String getHome(Model model) {
+		return "home";
+	}
+	
 	@RequestMapping(value = UrlConstants.DEVS_REGISTER_URL, method = RequestMethod.GET)
 	public String getDevelopers(Model model) {
 		model.addAttribute("Devs", devService.getDevelopers());
-		return "DevsRegistry";
+		return "developers";
 	}
 
 	@RequestMapping(value = UrlConstants.ACTIONS_URL, method = RequestMethod.GET)
 	public String addDev() {
 		return "actionsDeveloper";
+	}
+	
+	@RequestMapping(value = UrlConstants.ADD_DEV_SAVE_URL, method = RequestMethod.GET)
+	public String addDeveloper() {
+		return "add_developer";
 	}
 
 	@RequestMapping(value = UrlConstants.ADD_DEV_SAVE_URL, method = RequestMethod.POST)
@@ -56,6 +66,4 @@ public class BugtrackingController {
 
 		return "actionsDeveloper";
 	}
-
-
 }
