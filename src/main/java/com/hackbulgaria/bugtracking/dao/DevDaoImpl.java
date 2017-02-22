@@ -26,7 +26,7 @@ public class DevDaoImpl implements DevDao {
 	@Override
 	@Transactional
 	public boolean add(Developer dev) {
-		entityManager.merge(dev);
+		entityManager.persist(dev);
 		return true;
 	}
 
@@ -52,5 +52,13 @@ public class DevDaoImpl implements DevDao {
 		developer.setTeadLeadID(dev.getTeadLeadID());
 		return true;
 	}
+
+	@Override
+	public Developer getDeveloper(int id) {
+		// TODO Auto-generated method stub
+		return entityManager.find(Developer.class, id);
+	}
+	
+	
 
 }

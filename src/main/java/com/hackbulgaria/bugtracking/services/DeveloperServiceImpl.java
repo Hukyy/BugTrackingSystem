@@ -10,29 +10,43 @@ import com.hackbulgaria.bugtracking.entities.Developer;
 public class DeveloperServiceImpl implements DeveloperService {
 
 	@Autowired
-	private DevDao DevDao;
+	private DevDao devDao;
 
 	@Override
 	public boolean addDeveloper(Developer dev) {
-		DevDao.add(dev);
+		devDao.add(dev);
 		return true;
 	}
 
 	@Override
 	public boolean deleteDeveloper(int id) {
-		DevDao.delete(id);
+		devDao.delete(id);
 		return true;
 	}
 
 	@Override
 	public boolean editDeveloper(Developer dev) {
-		DevDao.edit(dev);
+		devDao.edit(dev);
 		return true;
 	}
 
 	@Override
 	public List<Developer> getDevelopers() {
-		return DevDao.getListOfDevs();
+		return devDao.getListOfDevs();
 	}
+	
+	@Override
+	public Developer loginDeveloper(int userId, String password) {
+		Developer developer = getDeveloper(userId);
+		if (developer != null && developer.getPassword().equals(password)) {
+			return developer;
+		}
+		return null;
+	}
+
+	@Override
+	public Developer getDeveloper(int id) {
+		return devDao.getDeveloper(id);
+}
 
 }

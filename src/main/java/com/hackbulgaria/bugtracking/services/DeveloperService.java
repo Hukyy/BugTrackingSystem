@@ -14,5 +14,8 @@ public interface DeveloperService {
 	public boolean editDeveloper(Developer dev);
 	// TODO search by ...
 	// public boolean searchDeveloper();
+	
+	public Developer loginDeveloper(int userId, String password);
+	public Developer getDeveloper(int id);
 
 }

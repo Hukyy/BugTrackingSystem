@@ -15,5 +15,7 @@ public interface DevDao {
 	public boolean edit(Developer dev);
 	// TODO search by
 	// public boolean search(?);
+	
+	public Developer getDeveloper(int id);
 
 }

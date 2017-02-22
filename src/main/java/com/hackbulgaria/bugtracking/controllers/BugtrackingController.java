@@ -66,6 +66,4 @@ public class BugtrackingController {
 
 		return "actionsDeveloper";
 	}
-
-
 }
