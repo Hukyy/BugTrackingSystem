@@ -9,7 +9,7 @@ CREATE TABLE developers(
     role VARCHAR(255) NOT NULL,
     startWorkingDate DATE, /** YYYY-MM-DD**/
     teamLead_id INT NULL DEFAULT NULL,
-    CONSTRAINT FOREIGN KEY (teamLead_id) REFERENCES developers(id) 
+    CONSTRAINT FOREIGN KEY (teamLead_id) REFERENCES developers(id) 	
 );
 
 CREATE TABLE issues(
@@ -25,6 +25,19 @@ creator INT,
 CONSTRAINT FOREIGN KEY(owner) REFERENCES developers(id) ,
 CONSTRAINT FOREIGN KEY(creator) REFERENCES developers(id)
 );
+
+ CREATE TABLE messages (
+     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     title VARCHAR(50) ,
+     message VARCHAR(200) not null,
+     timestamp DATETIME DEFAULT NOW(),
+     dev_id INT DEFAULT NULL 
+     );
+
+ALTER TABLE messages
+ADD FOREIGN KEY (dev_id)
+REFERENCES developers(id);
+
 
 INSERT INTO developers(name, role, startWorkingDate, teamLead_id) 
 VALUES ('Ivan Ivanov','JAVASCRIPT dev','2002-12-01', NULL),

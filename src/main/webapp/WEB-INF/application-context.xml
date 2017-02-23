@@ -48,7 +48,7 @@
 		<beans:property name="url"
 			value="jdbc:mysql://localhost:3306/BUG_TRACKING?useSSL=false" />
 		<beans:property name="username" value="root" />
-		<beans:property name="password" value="123" />
+		<beans:property name="password" value="" />
 	</beans:bean>
 	<!-- JPA entity manager factory -->
 	<beans:bean id="entityManagerFactory"

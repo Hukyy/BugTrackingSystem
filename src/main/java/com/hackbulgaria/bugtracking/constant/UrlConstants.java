@@ -40,4 +40,9 @@ public class UrlConstants {
 	public static final String LOGIN = "/login";
 	public static final String LOGOUT = "/logout";
 	
+	public static final String WHITE_BOARD = "/whiteBoard";
+	public static final String ADD_WHITE_BOARD = "whiteBoard/add";
+	public static final String ADD_WHITE_BOARD_SAVE = "/whiteBoard/addSave";
+	public static final String REMOVE_MESSAGE_SAVE = "whiteBoard/removeSave";
+	public static final String REMOVE_WHITE_BOARD = "whiteBoard/remove";
 }
